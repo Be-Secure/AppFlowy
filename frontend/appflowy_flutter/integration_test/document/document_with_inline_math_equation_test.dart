@@ -8,7 +8,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:integration_test/integration_test.dart';
 
-import '../util/ime.dart';
 import '../util/util.dart';
 
 void main() {
@@ -99,12 +98,12 @@ void main() {
       // expect to the see the inline math equation button is highlighted
       inlineMathEquationButton = find.byWidgetPredicate(
         (widget) =>
-            widget is IconItemWidget &&
+            widget is SVGIconItemWidget &&
             widget.tooltip ==
                 LocaleKeys.document_plugins_createInlineMathEquation.tr(),
       );
       expect(
-        tester.widget<IconItemWidget>(inlineMathEquationButton).isHighlight,
+        tester.widget<SVGIconItemWidget>(inlineMathEquationButton).isHighlight,
         isTrue,
       );
 
